@@ -4,25 +4,25 @@ Minimalistic url shortener written in Python3 using flask, MySQL and clipboard.j
 You can paste, drag and type in (+ return) URLs to shorten them
 
 ## How it works
-_adding_
-1. URL gets posted to /a
-2. verify URL
-3. add URL to database, get base 10 ID (insert id)
-4. convert base 10 ID to base 62
-5. convert base 62 ID to string ID using (alphabet) hashmap and return it
+### adding
+1.	URL gets posted to /a
+2.	verify URL
+3.	add URL to database, get base 10 ID (insert id)
+4.	convert base 10 ID to base 62
+5.	convert base 62 ID to string ID using (alphabet) hashmap and return it
 
-_redirecting_
-1. /{string_id} is opened
-2. revert {string_id} using (alphabet) hashmap back to base 62 ID
-3. revert base 62 ID back to base 10 ID
-4. get record from database with base 10 ID
-5. redirect to associated URL
+### redirecting
+1.	/{string_id} is opened
+2.	revert {string_id} using (alphabet) hashmap back to base 62 ID
+3.	revert base 62 ID back to base 10 ID
+4.	get record from database with base 10 ID
+5.	redirect to associated URL
 
 ## Setup
-1. make a copy of .env.example named .env
-2. change variables in .env (they're self-explanatory)
-3. create database, user and tables
-4. run it like any other flask app
+1.	make a copy of .env.example named .env
+2.	change variables in .env (they're self-explanatory)
+3.	create database, user and tables
+4.	run it like any other flask app
 
 Database schema:
 ```

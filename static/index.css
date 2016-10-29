@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html,
+body,
+#dragndrop {
+    height: 100%;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    background: #262626;
+    font-family: 'Raleway', sans-serif;
+    color: rgba(189, 189, 189, 0.35);
+}
+
+#dragndrop {
+    position: relative;
+}
+
+#rect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    border: calc(.5vh + .5vw) dashed rgba(189, 189, 189, 0.2);
+    height: 42%;
+    width: 66%;
+    border-radius: 10%;
+    text-align: center;
+}
+
+#main-text, #text-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 4vw;
+    font-weight: 600;
+    width: 100%;
+}
+
+#text-cont {
+    padding-top: 5px;
+    text-align: center;
+    font-size: 3vw;
+    width: 64%;
+}
+
+#text-cont:focus {
+    outline: none !important;
+    border: none !important;
+    cursor: default;
+    color: transparent;
+    text-shadow: 0 0 0 #525252;
+}
+
+#copy {
+    min-width: 300px;
+    min-height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 40vw;
+    height: 17vh;
+    background: #313131;
+    font-size: 2vw;
+    color: #262626;
+    border-radius: 1vh;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.25);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#copy > div:first-child {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#copy-input, #copy-button {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #262626;
+    border-radius: 1vw;
+    padding: 1vh;
+}
+
+#copy-button {
+    margin-right: 3vw;
+    float: right;
+    width: 8vw;
+    max-width: 60px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    min-width: 65px;
+    min-height: 17px;
+}
+
+#copy-button:hover{
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#alert {
+    color: rgba(189, 189, 189, 0.5);
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    height: 13vh;
+    width: 50vw;
+    font-size: 3vw;
+    font-weight: 600;
+    line-height: 13vh;
+    background: rgba(191, 54, 12, .55);
+    text-align: center;
+    border-radius: 1vh;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1.5s ease 0s;
+}
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.27);
+    top: 0;
+    left: 0;
+}
+
+#copy-input {
+    border: 1px solid #262626;
+    border-radius: 1vw;
+    margin-left: 2vw;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+    float: left;
+    min-width: 150px;
+    min-height: 15px;
+}

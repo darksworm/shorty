@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shorty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <script src="{{ url_for('static', filename='clipboard.min.js') }}"></script>
+</head>
+<body>
+<div id="dragndrop">
+    <div id="rect">
+        <div id="main-text">
+            Paste/Drop or type URL
+        </div>
+    </div>
+</div>
+<div autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id='editableDiv'
+     contenteditable='true' style=""></div>
+<div id="overlay" style="display:none"></div>
+<div id="copy" style="display:none">
+    <div>
+        <div id="copy-input"></div>
+        <div id="copy-button">COPY</div>
+    </div>
+</div>
+<div id="alert"></div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.idea/
+.env
+*.swp
+*.pyc
+*.iml

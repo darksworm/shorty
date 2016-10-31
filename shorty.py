@@ -3,7 +3,7 @@ import json
 from flask import Flask, redirect, request, render_template
 from env import DB
 from helpers import url_regex
-from hydra import Hydra
+from lib.hydra.hydra import Hydra
 
 app = Flask(__name__)
 

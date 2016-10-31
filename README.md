@@ -21,8 +21,10 @@ You can paste, drag and type in (+ return) URLs to shorten them
 ## Setup
 1.	make a copy of .env.example named .env
 2.	change variables in .env (they're self-explanatory)
-3.	create database, user and tables
-4.	run it like any other flask app
+3.  git submodule init
+4.  git submodule update
+5.	create database, user and tables
+6.	run it like any other flask app
 
 Database schema:
 ```

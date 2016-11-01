@@ -9,7 +9,7 @@ from lib.hydra.hydra import Hydra
 app = Flask(__name__)
 
 
-Envy.set_db(MySQLdb.connect(
+Envy.set_db(MySQLdb.connect, (
     Envy.get('MYSQL_DATABASE_HOST'),
     Envy.get('MYSQL_DATABASE_USER'),
     Envy.get('MYSQL_DATABASE_PASSWORD'),

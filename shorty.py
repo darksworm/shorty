@@ -1,11 +1,20 @@
 import json
 
+import MySQLdb
 from flask import Flask, redirect, request, render_template
-from env import DB
 from helpers import url_regex
+from lib.envy.envy import Envy
 from lib.hydra.hydra import Hydra
 
 app = Flask(__name__)
+
+
+Envy.set_db(MySQLdb.connect(
+    Envy.get('MYSQL_DATABASE_HOST'),
+    Envy.get('MYSQL_DATABASE_USER'),
+    Envy.get('MYSQL_DATABASE_PASSWORD'),
+    Envy.get('MYSQL_DATABASE_DB')
+))
 
 
 @app.route('/')
@@ -38,7 +47,7 @@ def add():
     except ValueError:
         url = 'http://' + url
 
-    conn = DB.get()
+    conn = Envy.get_db()
     cur = conn.cursor()
     cur.execute('''INSERT INTO urls(url) VALUES(%s)''', [url])
     idx = Hydra.dehydrate(conn.insert_id())
@@ -57,7 +66,7 @@ def url_redirect(url_id):
     except ValueError:
         return 'Invalid parameters'
 
-    conn = DB.get()
+    conn = Envy.get_db()
     cur = conn.cursor()
     cur.execute('''SELECT url FROM urls WHERE id =%s''', [db_id])
     result = cur.fetchone()

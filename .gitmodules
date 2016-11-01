@@ -1,3 +1,6 @@
 [submodule "lib/hydra"]
 	path = lib/hydra
 	url = https://github.com/darksworm/hydra.git
+[submodule "lib/envy"]
+	path = lib/envy
+	url = https://github.com/darksworm/envy.git

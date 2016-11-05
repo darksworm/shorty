@@ -72,7 +72,7 @@ var urlSh = {
     },
     onResponse: function (data) {
         if (data.success) {
-            urlSh.copy(document.location.href + data.id);
+            urlSh.copy(data.url);
             urlSh.toggleTexts(false);
         } else {
             urlSh.onFail(data.error);

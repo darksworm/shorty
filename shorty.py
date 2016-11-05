@@ -55,6 +55,7 @@ def add():
 
     result['success'] = True
     result['id'] = idx
+    result['url'] = request.host_url + idx
 
     return json.dumps(result), 200
 

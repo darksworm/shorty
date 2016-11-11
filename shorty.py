@@ -46,10 +46,10 @@ def add():
     except ValueError:
         url = 'http://' + url
 
-    conn = Envy.get_db()
     Envy.query('''INSERT INTO urls(url) VALUES(%s)''', [url])
-    idx = Hydra.dehydrate(conn.insert_id())
-    conn.commit()
+    db_handle = Envy.get_db()
+    idx = Hydra.dehydrate(db_handle.insert_id())
+    db_handle.commit()
 
     result['success'] = True
     result['id'] = idx
